@@ -1,8 +1,11 @@
 import datetime
 import requests
 import time
+import os
 
-proxies = {"http": "http://proxy.euipo.europa.eu:3129", "https": "http://proxy.euipo.europa.eu:3129"}
+http_proxy = os.getenv("HTTP_PROXY")
+https_proxy = os.getenv("HTTPS_PROXY")
+proxies = {"http": http_proxy, "https": https_proxy}
 
 while True:
     # print("\nISS API")
